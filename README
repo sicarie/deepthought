@@ -1,0 +1,47 @@
+node bandit
+   - .exec()
+   - eval()
+   - x-frame-options
+   - served over encrypted channels
+   - csp
+   - cors
+   - X-XSS-PROTECTION: enables *browser XSS - filtering * IE8 | IE9
+   - X-Content-type-options
+   - cookie secure only & httponly
+   - response headers set-cookie connect.sid
+   - use innerText instead of innerHTML
+   - inferior packages
+      - validator.js vs validator
+      - socket.io vs socket
+      - uglify-js vs uglify
+   - secure communications; validating ssl certs
+   - crypto libraries
+   - more esoteric:
+      - When using data to build HTML, script, CSS, XML, JSON, etc. make sure you take into account how that data must be presented in a literal sense to keep it's logical meaning. Data should be properly encoded before used in this manner to prevent injection style issues, and to make sure the logical meaning is preserved.
+      - Use a framework to build this code, don't build it by hand
+      - Least ye have forgotten the user controls the client side logic. I can use a number of browser plugging to set breakpoints, skip code, change values, etc. Never rely on client logic.
+      - Just like the security one, make sure any interesting business rules/logic is duplicated on the server side less a user bypass needed logic and do something silly, or worse, costly.
+      - This is hard and even a small mistake can cause large security issues. There are already a lot of frameworks to provide this functionality. Take a look at the JSON page for links.
+      - Just like building HTML or SQL you will cause XML injection bugs, so stay way from this or at least use an encoding library or safe JSON or XML library to make attributes and element data safe.
+      - Never send secrets. Anything the client knows the user will also know, so keep all that secret stuff on the server please.
+
+
+   - https://blog.risingstack.com/node-js-security-checklist/
+
+	 - hardcoded credentials
+	 - logging sensitive data
+	 - sqli - https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet
+   - csrf - https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
+   - xss - https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjP5NaGkN_SAhVW4mMKHd40AXQQFggqMAI&url=https%3A%2F%2Fwww.owasp.org%2Findex.php%2FXSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet&usg=AFQjCNH-t_6S7gtgM-zj5PkiPOGnqJJV0g&bvm=bv.149760088,d.cGc
+	 - regex - safe-regex.js
+	 - jsi
+	 - expressjs & negotiator
+   - other projects
+      - helmet
+	 	  - lusca
+		  - snyk & david-dm & bithound.io - check deps for vulns
+      - https://www.safaribooksonline.com/blog/2014/03/28/using-eslint-plugins-node-js-app-security/
+      - https://www.owasp.org/index.php/AJAX_Security_Cheat_Sheet
+
+      - https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
+      - https://docs.angularjs.org/api/ng/service/$http
